@@ -1,479 +1,53 @@
-﻿<!doctype html>
-<html lang="en-US">
-<head>
-  <meta charset="utf-8">
-  <!-- Created using Storyline 360 x64 - http://www.articulate.com  -->
-  <!-- version: 3.115.36688.0 -->
-  <title>AMHI Divisions</title>
-  <meta http-equiv="x-ua-compatible" content="IE=edge"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,shrink-to-fit=no,minimal-ui"/>
-  <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <style>
-    html, body { height: 100%; padding: 0; margin: 0 }
-    #app { height: 100%; width: 100%; }
-  </style>
-
-  <script>
-    window.DS = {};
-    window.globals = {
-      DATA_PATH_BASE: '',
-      HAS_FRAME: true,
-      HAS_SLIDE: true,
-
-      lmsPresent: false,
-      tinCanPresent: false,
-      cmi5Present: false,
-      aoSupport: false,
-      scale: 'LockedFit',
-      captureRc: false,
-      browserSize: 'optimal',
-      bgColor: '#E5E5E5',
-      features: 'DropInBase,JsInteractions,PlayerMemoryEnhancements,PlayerSizeOption,SlideLevelScale',
-      themeName: 'unified',
-      preloaderColor: '#FFFFFF',
-      suppressAnalytics: false,
-      productChannel: 'stable',
-      publishSource: 'storyline',
-      aid: 'aid|8a5980da-c390-4b5c-8ae2-400bcd3607a4',
-      cid: 'f45e55a7-99cb-4cca-99b2-4481481bdc4b',
-      playerVersion: '3.115.36688.0',
-      publishTimestamp: '2026-05-09T04:46:18.7884362Z',
-      maxIosVideoElements: 10,
-      connectionSettings: { message: 'You%20are%20offline.%20Trying%20to%20reconnect...', useDarkTheme: false, mode: 'disabled' },
-      hasFeature: function(feature) {
-        return this.features.split(',').includes(feature);
-      },
-      
-      parseParams: function(qs) {
-        if (window.globals.parsedParams != null) {
-          return window.globals.parsedParams;
-        }
-        qs = (qs || window.location.search.substr(1)).split('+').join(' ');
-        var params = {},
-            tokens,
-            re = /[?&]?([^=]+)=([^&]*)/g;
-
-        while (tokens = re.exec(qs)) {
-          params[decodeURIComponent(tokens[1]).trim()] =
-            decodeURIComponent(tokens[2]).trim();
-        }
-        window.globals.parsedParams = params;
-        return params;
-      }
-
-    };
-
-    if (window.flagsUnderTest != null) {
-      window.globals.features = window.flagsUnderTest.reduce((accum, feature) => {
-        if (!accum.includes(feature)) {
-          accum.push(feature);
-        }
-        return accum;
-      }, window.globals.features.split(',')).join();
-    }
-  </script>
-  <script>
-    var isIe11 = ('ActiveXObject' in window || window.MSBlobBuilder != null)
-      && window.msCrypto != null && !window.ActiveXObject;
-    if (isIe11) {
-      window.globals.unsupportedBrowser = true;
-      document.write(atob('PHN0eWxlPg0KICBAZm9udC1mYWNlIHsNCiAgICBmb250LWZhbWlseTogIk9wZW4gU2FucyBGdWxsIjsNCiAgICBmb250LXN0eWxlOiBub3JtYWw7DQogICAgZm9udC13ZWlnaHQ6IDQwMDsNCiAgICBzcmM6IHVybCgiLi9odG1sNS9saWIvc3R5bGVzaGVldHMvbW9iaWxlLWZvbnRzL29wZW4tc2Fucy1yZWd1bGFyLndvZmYiKSBmb3JtYXQoIndvZmYiKTsNCiAgfQ0KDQogICogew0KICAgIG1hcmdpbjogMDsNCiAgICBwYWRkaW5nOiAwOw0KICB9DQoNCiAgYm9keSwNCiAgaHRtbCB7DQogICAgYmFja2dyb3VuZDogYmxhY2s7DQogICAgY29sb3I6IHdoaXRlOw0KICAgIGZvbnQtZmFtaWx5OiAiT3BlbiBTYW5zIEZ1bGwiLCBzYW5zLXNlcmlmOw0KICAgIGZvbnQtc2l6ZTogMTZweDsNCiAgICBoZWlnaHQ6IDEwMCU7DQogICAgdGV4dC1hbGlnbjogY2VudGVyOw0KICAgIG92ZXJmbG93OiBoaWRkZW47DQogIH0NCg0KICAuc2xpZGUtbG9hZGVyIHsNCiAgICBkaXNwbGF5OiBub25lOw0KICB9DQoNCiAgLm1vYmlsZS1zdGFydC1jb3Vyc2UtdGl0bGUgew0KICAgIGZvbnQtc2l6ZTogMjlweDsNCiAgICBwYWRkaW5nLWJvdHRvbTogMzMuNzVweDsNCiAgICBwYWRkaW5nLXRvcDogMzMuNzVweDsNCiAgICB0ZXh0LXNoYWRvdzogNHB4IDRweCAyNXB4IHJnYigwLCAwLCAwLCAuMyk7DQogICAgY29sb3I6ICNlOGU4ZTg7DQogICAgei1pbmRleDogOTk5Ow0KICB9DQoNCiAgcCB7DQogICAgZm9udC1zaXplOiAxLjFlbTsNCiAgfQ0KDQogIHNwYW4gew0KICAgIGhlaWdodDogMTAwJTsNCiAgICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlOw0KICAgIGRpc3BsYXk6IGlubGluZS1ibG9jazsNCiAgfQ0KDQogIC5jb250ZW50IHsNCiAgICBiYWNrZ3JvdW5kOiAjMDAwOw0KICAgIHRleHQtYWxpZ246IGxlZnQ7DQogICAgZm9udC1zaXplOiAxNXB4Ow0KICAgIGNvbG9yOiAjYWFhOw0KICAgIHdpZHRoOiA4MCU7DQogICAgbWF4LXdpZHRoOiA1MzVweDsNCiAgICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlOw0KICAgIGRpc3BsYXk6IGlubGluZS1ibG9jazsNCiAgfQ0KDQogIC5idG4tY29udGFpbiB7DQogICAgcG9zaXRpb246IHJlbGF0aXZlOw0KICAgIG1hcmdpbi10b3A6IDNlbTsNCiAgICB0ZXh0LWFsaWduOiBjZW50ZXI7DQogIH0NCg0KICAuaWUxMS13YXJuIHAgYSB7DQogICAgY29sb3I6ICM1ZGIwZmYgIWltcG9ydGFudDsNCiAgICB0ZXh0LWRlY29yYXRpb246IHVuZGVybGluZSAhaW1wb3J0YW50Ow0KICB9DQoNCiAgYS5sZWFybiB7DQogICAgcG9zaXRpb246IHJlbGF0aXZlOw0KICAgIGZsb2F0OiBsZWZ0Ow0KICAgIG1hcmdpbi1yaWdodDogMmVtOw0KICAgIGRpc3BsYXk6IGlubGluZS1ibG9jazsNCiAgICBib3JkZXI6IDFweCBzb2xpZCB3aGl0ZTsNCiAgICBjb2xvcjogYmxhY2sgIWltcG9ydGFudDsNCiAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7DQogICAgcGFkZGluZzogLjVlbTsNCiAgICBwYWRkaW5nOiAxOHB4Ow0KICAgIHBhZGRpbmctbGVmdDogNTBweDsNCiAgICBwYWRkaW5nLXJpZ2h0OiAzMHB4Ow0KICAgIGJhY2tncm91bmQ6ICNmZmY7DQogICAgYm9yZGVyLXJhZGl1czogNDBweDsNCiAgICBjdXJzb3I6IHBvaW50ZXI7DQogIH0NCg0KICBhLmxlYXJuOmFmdGVyIHsNCiAgICBjb250ZW50OiAiIjsNCiAgICBwb3NpdGlvbjogYWJzb2x1dGU7DQogICAgcG9pbnRlci1ldmVudHM6IG5vbmU7DQogICAgbGVmdDogMjBweDsNCiAgICB0b3A6IDUwJTsNCiAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoLTUwJSk7DQogICAgd2lkdGg6IDA7DQogICAgaGVpZ2h0OiAwOw0KICAgIGJvcmRlci1zdHlsZTogc29saWQ7DQogICAgYm9yZGVyLXdpZHRoOiA5cHggMCA5cHggMTVweDsNCiAgICBib3JkZXItY29sb3I6IHRyYW5zcGFyZW50IHRyYW5zcGFyZW50IHRyYW5zcGFyZW50ICM2ZTZlNmU7DQogICAgY2xlYXI6IGJvdGg7DQogIH0NCg0KICAuaWUxMS13YXJuIHsNCiAgICBwb3NpdGlvbjogZml4ZWQ7DQogICAgd2lkdGg6IDEwMCU7DQogICAgaGVpZ2h0OiAxMDAlOw0KICAgIGJhY2tncm91bmQ6IGJsYWNrOw0KICB9DQo8L3N0eWxlPg0KDQo8ZGl2IGNsYXNzPSJpZTExLXdhcm4iPg0KICA8c3Bhbj48L3NwYW4+DQogIDxkaXYgY2xhc3M9ImNvbnRlbnQiPg0KICAgIDxkaXYgY2xhc3M9Im1vYmlsZS1zdGFydC1jb3Vyc2UtdGl0bGUiPkVuZCBvZiBTdXBwb3J0IGZvciBJbnRlcm5ldCBFeHBsb3JlciAxMTwvZGl2Pg0KICAgIDxwPkZvbGxvd2luZyBNaWNyb3NvZnQncyBsZWFkLCB3ZSBlbmRlZCBzdXBwb3J0IGZvciBJbnRlcm5ldCBFeHBsb3JlciAxMSAoSUUxMSkuDQogICAgICBBcyBvZiBKdWx5IDIwMjIsIHlvdSBjYW4gbm8gbG9uZ2VyIHZpZXcgUmlzZSAzNjAsIFN0b3J5bGluZSAzNjAsIG9yIFN0dWRpbyAzNjANCiAgICAgIGNvdXJzZXMgaW4gSUUxMS4gVXNlIHRoZSBsYXRlc3QgdmVyc2lvbiBvZiBhIHN1cHBvcnRlZCBicm93c2VyIC0NCiAgICAgIDxhIGhyZWY9Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vY2hyb21lL2Rvd25sb2Fkcy8iIHRhcmdldD0iX2JsYW5rIj5Hb29nbGUgQ2hyb21lPC9hPiwNCiAgICAgIDxhIGhyZWY9Imh0dHBzOi8vd3d3Lm1pY3Jvc29mdC5jb20vZW4tdXMvZWRnZSIgdGFyZ2V0PSJfYmxhbmsiPk1pY3Jvc29mdCBFZGdlPC9hPiwNCiAgICAgIG9yDQogICAgICA8YSBocmVmPSJodHRwczovL3d3dy5tb3ppbGxhLm9yZy9lbi1VUy9maXJlZm94L25ldy8iIHRhcmdldD0iX2JsYW5rIj5Nb3ppbGxhIEZpcmVmb3g8L2E+Lg0KICAgIDwvcD4NCiAgICA8ZGl2IGNsYXNzPSJidG4tY29udGFpbiI+DQogICAgICA8YSBjbGFzcz0ibGVhcm4iIGhyZWY9Imh0dHBzOi8vYXJ0aWN1bGF0ZS5jb20vc3VwcG9ydC9hcnRpY2xlL0VuZC1vZi1TdXBwb3J0LWZvci1JbnRlcm5ldC1FeHBsb3Jlci0xMSINCiAgICAgICAgdGFyZ2V0PSJfYmxhbmsiPkxlYXJuIE1vcmU8L2E+DQogICAgPC9kaXY+DQogIDwvZGl2Pg0KPC9kaXY+DQo='));
-    }
-  </script>
-
-  <script>
-    if (window.globals.hasFeature('Localization')) {
-      
-      
-    }
-  </script>
-
-  
-  
-  <script>window.THREE = { };</script>
-  
-</head>
-<body style="background: #E5E5E5" class="cs-HTML theme-unified">
-  <!-- 360 -->
-  <script>!function(){var e,i=/iPhone/i,o=/iPod/i,n=/iPad/i,t=/\biOS-universal(?:.+)Mac\b/i,r=/\bAndroid(?:.+)Mobile\b/i,a=/Android/i,d=/(?:SD4930UR|\bSilk(?:.+)Mobile\b)/i,p=/Silk/i,l=/Windows Phone/i,u=/\bWindows(?:.+)ARM\b/i,b=/BlackBerry/i,s=/BB10/i,c=/Opera Mini/i,f=/\b(CriOS|Chrome)(?:.+)Mobile/i,h=/Mobile(?:.+)Firefox\b/i,v=function(e){return void 0!==e&&"MacIntel"===e.platform&&"number"==typeof e.maxTouchPoints&&e.maxTouchPoints>1&&"undefined"==typeof MSStream};e=function(e){var m={userAgent:"",platform:"",maxTouchPoints:0};e||"undefined"==typeof navigator?"string"==typeof e?m.userAgent=e:e&&e.userAgent&&(m={userAgent:e.userAgent,platform:e.platform,maxTouchPoints:e.maxTouchPoints||0}):m={userAgent:navigator.userAgent,platform:navigator.platform,maxTouchPoints:navigator.maxTouchPoints||0};var g=m.userAgent,y=g.split("[FBAN");void 0!==y[1]&&(g=y[0]),void 0!==(y=g.split("Twitter"))[1]&&(g=y[0]);var A=function(e){return function(i){return i.test(e)}}(g),w={apple:{phone:A(i)&&!A(l),ipod:A(o),tablet:!A(i)&&(A(n)||v(m))&&!A(l),universal:A(t),device:(A(i)||A(o)||A(n)||A(t)||v(m))&&!A(l)},amazon:{phone:A(d),tablet:!A(d)&&A(p),device:A(d)||A(p)},android:{phone:!A(l)&&A(d)||!A(l)&&A(r),tablet:!A(l)&&!A(d)&&!A(r)&&(A(p)||A(a)),device:!A(l)&&(A(d)||A(p)||A(r)||A(a))||A(/\bokhttp\b/i)},windows:{phone:A(l),tablet:A(u),device:A(l)||A(u)},other:{blackberry:A(b),blackberry10:A(s),opera:A(c),firefox:A(h),chrome:A(f),device:A(b)||A(s)||A(c)||A(h)||A(f)},any:!1,phone:!1,tablet:!1};return w.any=w.apple.device||w.android.device||w.windows.device||w.other.device,w.phone=w.apple.phone||w.android.phone||w.windows.phone,w.tablet=w.apple.tablet||w.android.tablet||w.windows.tablet,w}(),"object"==typeof exports&&"undefined"!=typeof module?module.exports=e:"function"==typeof define&&define.amd?define((function(){return e})):this.isMobile=e}();
-    window.isMobile.apple.tablet = window.isMobile.apple.tablet ||
-      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-    window.isMobile.apple.device = window.isMobile.apple.device || window.isMobile.apple.tablet;
-    window.isMobile.tablet = window.isMobile.tablet || window.isMobile.apple.tablet;
-    window.isMobile.any = window.isMobile.any || window.isMobile.apple.tablet;
-  </script>
-
-  <div id="focus-sink" tabindex="-1"></div>
-
-  <div id="preso"></div>
-  <script>
-    (function() {
-
-      var classTypes = [ 'desktop', 'mobile', 'phone', 'tablet' ];
-
-      var addDeviceClasses = function(prefix, testObj) {
-        var curr, i;
-        for (i = 0; i < classTypes.length; i++) {
-          curr = classTypes[i];
-          if (testObj[curr]) {
-            document.body.classList.add(prefix + curr);
-          }
-        }
-      };
-
-      var params = window.globals.parseParams(),
-          isDevicePreview = params.devicepreview === '1',
-          isPhoneOverride = params.deviceType === 'phone' || (isDevicePreview && params.phone == '1'),
-          isTabletOverride = (params.deviceType === 'tablet' || isDevicePreview) && !isPhoneOverride,
-          isMobileOverride = isPhoneOverride || isTabletOverride;
-
-      var deviceView = {
-        desktop: !window.isMobile.any && !isMobileOverride,
-        mobile: window.isMobile.any || isMobileOverride,
-        phone: isPhoneOverride || (window.isMobile.phone && !isTabletOverride),
-        tablet: isTabletOverride || window.isMobile.tablet
-      };
-
-      window.globals.deviceView = deviceView;
-      window.isMobile.desktop = !window.isMobile.any;
-      window.isMobile.mobile = window.isMobile.any;
-
-      addDeviceClasses('view-', deviceView);
-
-    })();
-  </script>
-  
-  <script src='story_content/triggers.js' type=text/javascript></script>
-<script src='story_content/user.js' type=text/javascript></script>
-  <div class="slide-loader"></div>
-
-  <script>
-    var doc = document, loader = doc.body.querySelector('.slide-loader'); [ 1, 2, 3 ].forEach(function(n) { var d = doc.createElement('div'); d.style.backgroundColor = window.globals.preloaderColor; d.classList.add('mobile-loader-dot'); d.classList.add('dot' + n); loader.appendChild(d); });
-  </script>
-
-  <div class="mobile-load-title-overlay" style="display: none">
-    <div class="mobile-load-title">AMHI Divisions</div>
-  </div>
-
-  <div class="mobile-chrome-warning"></div>
-
-  
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GeoComm Executive Conversion Dashboard</title>
 <style>
-  .warn-connection-dialog {
-    display: none;
-    background: transparent;
-    pointer-events: all;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 999;
-  }
-
-  .warn-connection-content {
-    pointer-events: all;
-    border-radius: 4px;
-    background: white;
-    border: 1px solid #E7E7E7;
-    color: #333333;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
-    transition: all 150ms ease-out;
-    position: absolute;
-    white-space: nowrap;
-  }
-
-  .view-phone.is-landscape .warn-connection-content {
-    left: 23px;
-    bottom: 23px;
-  }
-
-  .view-tablet.is-landscape .warn-connection-content {
-    left: 50%;
-    top: 20px;
-    transform: translateX(-50%);
-  }
-
-  .view-mobile.is-portrait .warn-connection-content {
-    transform: translate(-50%, calc(-100% - 15px));
-  }
-
-  .warn-connection-content p {
-    display: inline-block;
-    margin: 0 8px 0 0;
-    line-height: 33px;
-    font-size: 11px;
-  }
-
-  .warn-connection-content svg {
-    position: relative;
-    vertical-align: middle;
-    margin: 0 2px 2px 8px;
-  }
-
-  .view-desktop .warn-connection-content {
-    left: 1.5em;
-    bottom: 1.5em;
-  }
-
-  .view-desktop .warn-connection-content p {
-    font-size: 1.1em;
-  }
-
-  .is-offline .warn-connection-dialog {
-    display: block;
-  }
-
-  .is-offline .cs-panel * {
-    pointer-events: none !important;
-  }
-
-  .is-offline .cs-panel {
-    pointer-events: all !important;
-  }
-
-  .is-offline #nav-controls * {
-    pointer-events: none !important;
-  }
-
-  .is-offline #nav-controls {
-    pointer-events: all !important;
-  }
-</style>
-
-<div class="warn-connection-dialog" role="alertdialog" aria-modal="true" tabindex="0" aria-labelledby="warn-connection-message">
-  <div class="warn-connection-content">
-    <svg width="17" height="15" viewBox="0 0 17 15" xmlns="http://www.w3.org/2000/svg">
-      <path fill="#8F0000" stroke="white" d="M16.07,12.98 L15.88,12.23 L9.51,1.21 C8.97,0.26,7.6,0.26,7.06,1.21 L0.69,12.23 C0.15,13.16,0.81,14.36,1.91,14.36 H14.65 C15.47,14.36,16.05,13.7,16.07,12.98 Z"/>
-      <path fill="white" stroke="white" d="M8.58,5.5 C8.35,5.28,8.5,5.35,8.21,5.32 C8.09,5.35,7.97,5.49,7.96,5.67 C7.97,5.79,7.98,5.92,7.98,6.04 L7.98,6.04 C7.99,6.17,8,6.31,8.01,6.43 L8.01,6.44 C8.03,6.92,8.06,7.41,8.09,7.9 L8.09,7.9 C8.12,8.39,8.14,8.88,8.17,9.37 C8.17,9.39,8.18,9.42,8.2,9.44 C8.23,9.46,8.25,9.47,8.28,9.47 C8.31,9.47,8.34,9.46,8.35,9.44 C8.37,9.43,8.38,9.4,8.39,9.35 L8.39,9.34 C8.39,9.24,8.4,9.15,8.4,9.05 L8.4,9.05 C8.41,8.96,8.41,8.86,8.42,8.75 C8.43,8.44,8.45,8.12,8.47,7.81 L8.47,7.81 C8.49,7.49,8.51,7.18,8.53,6.87 C8.55,6.46,8.56,6.05,8.59,5.64 L8.6,5.62 C8.6,5.57,8.59,5.53,8.58,5.5 L8.21,5.32 Z"/>
-      <circle fill="white" stroke="white" cx="8.3" cy="11.35" r="0.3"/>
-    </svg>
-    <p id="warn-connection-message">You are offline. Trying to reconnect...</p>
-  </div>
-</div>
-
+:root{--bg:#071722;--ink:#eef8ff;--muted:#a9c3d3;--blue:#0099d8;--teal:#00b5ad;--lime:#91c83e;--gold:#f4b23f;--orange:#f57c20;--border:rgba(162,214,236,.22);--shadow:0 20px 60px rgba(0,0,0,.35);--radius:18px}*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:radial-gradient(circle at top left,rgba(0,153,216,.24),transparent 34rem),linear-gradient(135deg,#04111a 0%,#071722 48%,#0b1d28 100%);color:var(--ink)}button,input,select{font:inherit}.wrap{max-width:1480px;margin:0 auto;padding:26px}.hero{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;margin-bottom:20px}.brand{display:flex;gap:16px;align-items:center}.logo{width:54px;height:54px;border-radius:16px;background:linear-gradient(135deg,var(--blue),var(--lime));display:grid;place-items:center;font-weight:900;color:#04111a;box-shadow:0 14px 35px rgba(0,153,216,.32)}h1{font-size:clamp(26px,3vw,42px);margin:0 0 4px;letter-spacing:-.03em}.hero p{margin:0;color:var(--muted)}.pill{padding:10px 14px;border:1px solid var(--border);border-radius:999px;background:rgba(255,255,255,.05);color:var(--muted);font-size:14px}.card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.025));border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}.card h2{font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:#c7e9f8;margin:0 0 14px;font-weight:800}.grid{display:grid;gap:16px}.settings{margin-bottom:18px}.settings>summary{list-style:none;display:flex;justify-content:space-between;gap:14px;cursor:pointer;border:1px solid var(--border);border-radius:var(--radius);background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.025));box-shadow:var(--shadow);padding:16px 18px;font-weight:900}.settings>summary::-webkit-details-marker{display:none}.summary-help{display:block;color:var(--muted);font-size:12px;font-weight:500;margin-top:4px}.chev{width:34px;height:34px;border-radius:999px;display:grid;place-items:center;background:rgba(0,153,216,.15);border:1px solid var(--border);transition:.18s}.settings[open] .chev{transform:rotate(180deg)}.controls{grid-template-columns:1.1fr .9fr .9fr;margin-top:14px}.upload{border:1px dashed rgba(0,181,173,.55);border-radius:15px;padding:16px;background:rgba(0,181,173,.07)}.note,.footer{font-size:12px;line-height:1.45;color:var(--muted);margin-top:8px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field label{display:block;color:#cae5f2;font-size:12px;font-weight:700;margin-bottom:6px}.field select,.field input,.upload input{width:100%;background:#081a25;color:var(--ink);border:1px solid var(--border);border-radius:11px;padding:10px}.box{min-height:92px;max-height:164px;overflow:auto;border:1px solid var(--border);border-radius:12px;padding:10px;background:#081a25}.check{display:flex;align-items:center;gap:8px;padding:6px 4px;color:#cfe8f4;font-size:14px}.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.btn{border:1px solid var(--border);background:rgba(0,153,216,.12);color:var(--ink);border-radius:999px;padding:8px 11px;cursor:pointer}.btn:hover{background:rgba(0,153,216,.22)}.kpis{grid-template-columns:repeat(6,minmax(0,1fr));margin-bottom:16px}.kpi{position:relative;overflow:hidden}.kpi.user{border-color:rgba(145,200,62,.62);background:linear-gradient(180deg,rgba(145,200,62,.16),rgba(255,255,255,.025))}.label{color:#cde8f4;font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:800}.value{font-size:clamp(22px,2.3vw,36px);font-weight:900;margin:6px 0}.sub{color:#bad8e5;font-size:12px;line-height:1.35}.charts{grid-template-columns:repeat(2,minmax(0,1fr))}.chart-card{min-height:400px}.chart-title{font-weight:850;font-size:18px;margin-bottom:4px}.chart-sub{color:var(--muted);font-size:12px;margin-bottom:12px}.chart{height:310px}.chart svg{width:100%;height:100%;overflow:visible}.gridline{stroke:rgba(180,220,238,.18)}.axis text{fill:#a9c3d3;font-size:11px}.legend{display:flex;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:12px}.sw{width:10px;height:10px;border-radius:3px;display:inline-block;margin-right:5px}.table{width:100%;border-collapse:collapse;font-size:13px}.table th,.table td{padding:10px;border-bottom:1px solid var(--border);text-align:right}.table th:first-child,.table td:first-child{text-align:left}.table th{color:#c9ecfa;font-size:11px;text-transform:uppercase;letter-spacing:.08em;background:rgba(255,255,255,.025)}.empty{display:grid;place-items:center;height:280px;color:var(--muted);text-align:center;border:1px dashed var(--border);border-radius:14px}@media(max-width:1100px){.controls,.charts{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(3,1fr)}}@media(max-width:700px){.hero{grid-template-columns:1fr}.kpis{grid-template-columns:1fr 1fr}.form-row{grid-template-columns:1fr}.wrap{padding:16px}}
+</style></head><body><div class="wrap"><header class="hero"><div class="brand"><div class="logo">GC</div><div><h1>Conversion Service Usage Dashboard</h1><p>Weekly tenant usage, conversion throughput, and processing health for executive review.</p></div></div><div class="pill" id="dataStatus">18 rows • 7 tenants • 4 weeks</div></header>
+<details class="settings" open=""><summary><span>Data &amp; View Settings<span class="summary-help">Manage weekly CSV uploads, tenant filters, reporting period, and visible charts.</span></span><span class="chev">⌄</span></summary><section class="grid controls"><div class="card"><h2>Weekly CSV Uploads</h2><div class="upload"><input id="fileInput" type="file" accept=".csv,text/csv" multiple=""><div class="note">Upload one or more weekly CSV files. New files are merged into the dashboard and all metrics refresh automatically.</div></div><div class="btns"><button class="btn" id="resetBtn">Reset Sample Data</button><button class="btn" id="clearBtn">Clear Data</button><button class="btn" id="exportBtn">Download Filtered CSV</button><button class="btn" id="saveSettingsBtn">Save View Settings</button><button class="btn" id="resetSettingsBtn">Reset View Settings</button><button class="btn" id="snapshotBtn">Download Hosted Snapshot HTML</button><button class="btn" id="scormBtn">Export SCORM ZIP</button></div></div><div class="card"><h2>Tenant Filter</h2><div class="form-row"><div class="field"><label>Search Tenant</label><input id="tenantSearch" placeholder="Search by tenant name"></div><div class="field"><label>Reporting Period</label><select id="weekRange"><option value="all">All Weeks</option><option value="latest">Latest Week Only</option><option value="last4">Last 4 Weeks</option></select></div></div><div class="box" id="tenantBox"><label class="check"><input type="checkbox" data-tenant="esri-canada" checked=""> esri-canada</label><label class="check"><input type="checkbox" data-tenant="gc-support" checked=""> gc-support</label><label class="check"><input type="checkbox" data-tenant="geoconvergence" checked=""> geoconvergence</label><label class="check"><input type="checkbox" data-tenant="landtech-consultants" checked=""> landtech-consultants</label><label class="check"><input type="checkbox" data-tenant="the-geospatial-group" checked=""> the-geospatial-group</label><label class="check"><input type="checkbox" data-tenant="turtles-dev" checked=""> turtles-dev</label><label class="check"><input type="checkbox" data-tenant="turtles-test" checked=""> turtles-test</label></div><div class="btns"><button class="btn" id="allTenants">Select All</button><button class="btn" id="noTenants">Clear Selection</button></div></div><div class="card"><h2>Visible Charts</h2><div class="box" id="chartBox"><label class="check"><input type="checkbox" data-chart="weeklyTrend" checked=""> Weekly Conversion Volume</label><label class="check"><input type="checkbox" data-chart="mix" checked=""> Conversion Mix by File Type</label><label class="check"><input type="checkbox" data-chart="topTenants" checked=""> Highest-Volume Tenants</label><label class="check"><input type="checkbox" data-chart="objects" checked=""> Object Processing Volume</label><label class="check"><input type="checkbox" data-chart="performance" checked=""> Average Processing Time by Tenant</label><label class="check"><input type="checkbox" data-chart="fileSize" checked=""> Weekly Data Processed</label><label class="check"><input type="checkbox" data-chart="versions" checked=""> Platform Version Summary</label></div><div class="note">Choose which charts appear in the executive view.</div></div></section></details>
+<section class="grid kpis" id="kpis"><div class="card kpi user"><div class="label">Selected Tenants</div><div class="value">5</div><div class="sub">Active tenant scope for selected period</div></div><div class="card kpi "><div class="label">Total Conversions</div><div class="value">84</div><div class="sub">22 PDF • 40 DWG • 22 DXF</div></div><div class="card kpi "><div class="label">CAD Conversions</div><div class="value">62</div><div class="sub">40 DWG + 22 DXF</div></div><div class="card kpi "><div class="label">Objects Converted</div><div class="value">495,456</div><div class="sub">507,436 objects imported</div></div><div class="card kpi "><div class="label">Data Processed</div><div class="value">96.20</div><div class="sub">Megabytes processed across selected data</div></div><div class="card kpi "><div class="label">Average Processing Time</div><div class="value">615.1</div><div class="sub">Seconds per conversion row</div></div></section><section class="grid charts" id="charts"><div class="card chart-card"><div class="chart-title">Weekly Conversion Volume</div><div class="chart-sub">5 tenants • 3 weeks selected</div><div class="chart" id="weeklyTrend"><svg viewBox="0 0 667 310"><line class="gridline" x1="56" x2="649" y1="256" y2="256"></line><line class="gridline" x1="56" x2="649" y1="196.5" y2="196.5"></line><line class="gridline" x1="56" x2="649" y1="137" y2="137"></line><line class="gridline" x1="56" x2="649" y1="77.5" y2="77.5"></line><line class="gridline" x1="56" x2="649" y1="18" y2="18"></line><polyline fill="none" stroke="var(--blue)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" points="56,131.33333333333331 352.5,18 649,142.66666666666669"></polyline><circle cx="56" cy="131.33333333333331" r="5" fill="var(--lime)"><title>2026-04-20: 22.0 Conversions</title></circle><circle cx="352.5" cy="18" r="5" fill="var(--lime)"><title>2026-05-04: 42.0 Conversions</title></circle><circle cx="649" cy="142.66666666666669" r="5" fill="var(--lime)"><title>2026-05-11: 20.0 Conversions</title></circle><g class="axis"><text transform="translate(56,292) rotate(-28)" text-anchor="end">04-20</text><text transform="translate(352.5,292) rotate(-28)" text-anchor="end">05-04</text><text transform="translate(649,292) rotate(-28)" text-anchor="end">05-11</text><text x="56" y="14">Conversions</text></g></svg></div></div><div class="card chart-card"><div class="chart-title">Conversion Mix by File Type</div><div class="chart-sub">5 tenants • 3 weeks selected</div><div class="chart" id="mix"><div class="legend"><span><i class="sw" style="background:var(--blue)"></i>PDF</span><span><i class="sw" style="background:var(--lime)"></i>DWG</span><span><i class="sw" style="background:var(--orange)"></i>DXF</span></div><svg viewBox="0 0 667 285"><rect x="100.475" y="210.66666666666669" width="108.71666666666667" height="45.33333333333333" rx="4" fill="var(--blue)"><title>2026-04-20 PDF: 8</title></rect><rect x="100.475" y="165.33333333333337" width="108.71666666666667" height="45.33333333333333" rx="4" fill="var(--lime)"><title>2026-04-20 DWG: 8</title></rect><rect x="100.475" y="131.33333333333337" width="108.71666666666667" height="34" rx="4" fill="var(--orange)"><title>2026-04-20 DXF: 6</title></rect><text transform="translate(154.83333333333331,267) rotate(-28)" text-anchor="end" fill="#a9c3d3" font-size="11">04-20</text><rect x="298.14166666666665" y="188" width="108.71666666666667" height="68" rx="4" fill="var(--blue)"><title>2026-05-04 PDF: 12</title></rect><rect x="298.14166666666665" y="108.66666666666667" width="108.71666666666667" height="79.33333333333333" rx="4" fill="var(--lime)"><title>2026-05-04 DWG: 14</title></rect><rect x="298.14166666666665" y="18.000000000000014" width="108.71666666666667" height="90.66666666666666" rx="4" fill="var(--orange)"><title>2026-05-04 DXF: 16</title></rect><text transform="translate(352.5,267) rotate(-28)" text-anchor="end" fill="#a9c3d3" font-size="11">05-04</text><rect x="495.8083333333333" y="244.66666666666666" width="108.71666666666667" height="11.333333333333332" rx="4" fill="var(--blue)"><title>2026-05-11 PDF: 2</title></rect><rect x="495.8083333333333" y="142.66666666666666" width="108.71666666666667" height="102" rx="4" fill="var(--lime)"><title>2026-05-11 DWG: 18</title></rect><rect x="495.8083333333333" y="142.66666666666666" width="108.71666666666667" height="0" rx="4" fill="var(--orange)"><title>2026-05-11 DXF: 0</title></rect><text transform="translate(550.1666666666666,267) rotate(-28)" text-anchor="end" fill="#a9c3d3" font-size="11">05-11</text></svg></div></div><div class="card chart-card"><div class="chart-title">Highest-Volume Tenants</div><div class="chart-sub">5 tenants • 3 weeks selected</div><div class="chart" id="topTenants"><svg viewBox="0 0 667 310"><line class="gridline" x1="56" x2="649" y1="256" y2="256"></line><line class="gridline" x1="56" x2="649" y1="196.5" y2="196.5"></line><line class="gridline" x1="56" x2="649" y1="137" y2="137"></line><line class="gridline" x1="56" x2="649" y1="77.5" y2="77.5"></line><line class="gridline" x1="56" x2="649" y1="18" y2="18"></line><rect x="74.976" y="18" width="80.648" height="238" rx="7" fill="var(--teal)"><title>gc-support: 36 Conversions</title></rect><text x="115.3" y="12" text-anchor="middle" fill="#dff8ff" font-size="11">36</text><text transform="translate(115.3,292) rotate(-32)" text-anchor="end" fill="#a9c3d3" font-size="11">gc-support</text><rect x="193.576" y="123.77777777777777" width="80.648" height="132.22222222222223" rx="7" fill="var(--teal)"><title>landtech-consultants: 20 Conversions</title></rect><text x="233.89999999999998" y="117.77777777777777" text-anchor="middle" fill="#dff8ff" font-size="11">20</text><text transform="translate(233.89999999999998,292) rotate(-32)" text-anchor="end" fill="#a9c3d3" font-size="11">landtech-consult</text><rect x="312.176" y="123.77777777777777" width="80.648" height="132.22222222222223" rx="7" fill="var(--teal)"><title>esri-canada: 20 Conversions</title></rect><text x="352.5" y="117.77777777777777" text-anchor="middle" fill="#dff8ff" font-size="11">20</text><text transform="translate(352.5,292) rotate(-32)" text-anchor="end" fill="#a9c3d3" font-size="11">esri-canada</text><rect x="430.776" y="216.33333333333334" width="80.648" height="39.666666666666664" rx="7" fill="var(--teal)"><title>the-geospatial-group: 6 Conversions</title></rect><text x="471.1" y="210.33333333333334" text-anchor="middle" fill="#dff8ff" font-size="11">6</text><text transform="translate(471.1,292) rotate(-32)" text-anchor="end" fill="#a9c3d3" font-size="11">the-geospatial-g</text><rect x="549.376" y="242.77777777777777" width="80.648" height="13.222222222222221" rx="7" fill="var(--teal)"><title>geoconvergence: 2 Conversions</title></rect><text x="589.6999999999999" y="236.77777777777777" text-anchor="middle" fill="#dff8ff" font-size="11">2</text><text transform="translate(589.6999999999999,292) rotate(-32)" text-anchor="end" fill="#a9c3d3" font-size="11">geoconvergence</text><g class="axis"><text x="56" y="14">Conversions</text></g></svg></div></div><div class="card chart-card"><div class="chart-title">Object Processing Volume</div><div class="chart-sub">5 tenants • 3 weeks selected</div><div class="chart" id="objects"><div class="legend"><span><i class="sw" style="background:var(--gold)"></i>Imported</span><span><i class="sw" style="background:var(--blue)"></i>Converted</span></div><svg viewBox="0 0 667 285"><rect x="105.41666666666666" y="205.49968477732878" width="51.39333333333333" height="50.500315222671226" rx="5" fill="var(--gold)"></rect><rect x="160.81" y="220.47476668354744" width="51.39333333333333" height="35.52523331645256" rx="5" fill="var(--blue)"></rect><text transform="translate(156.81,267) rotate(-28)" text-anchor="end" fill="#a9c3d3" font-size="11">04-20</text><rect x="303.0833333333333" y="18" width="51.39333333333333" height="238" rx="5" fill="var(--gold)"></rect><rect x="358.47666666666663" y="70.4767407009312" width="51.39333333333333" height="185.5232592990688" rx="5" fill="var(--blue)"></rect><text transform="translate(354.47666666666663,267) rotate(-28)" text-anchor="end" fill="#a9c3d3" font-size="11">05-04</text><rect x="500.75" y="232.4563080707339" width="51.39333333333333" height="23.5436919292661" rx="5" fill="var(--gold)"></rect><rect x="556.1433333333333" y="172.37149766941926" width="51.39333333333333" height="83.62850233058074" rx="5" fill="var(--blue)"></rect><text transform="translate(552.1433333333333,267) rotate(-28)" text-anchor="end" fill="#a9c3d3" font-size="11">05-11</text></svg></div></div><div class="card chart-card"><div class="chart-title">Average Processing Time by Tenant</div><div class="chart-sub">5 tenants • 3 weeks selected</div><div class="chart" id="performance"><svg viewBox="0 0 667 310"><line class="gridline" x1="56" x2="649" y1="256" y2="256"></line><line class="gridline" x1="56" x2="649" y1="196.5" y2="196.5"></line><line class="gridline" x1="56" x2="649" y1="137" y2="137"></line><line class="gridline" x1="56" x2="649" y1="77.5" y2="77.5"></line><line class="gridline" x1="56" x2="649" y1="18" y2="18"></line><rect x="74.976" y="18" width="80.648" height="238" rx="7" fill="var(--teal)"><title>gc-support: 1,246.2 Average seconds</title></rect><text x="115.3" y="12" text-anchor="middle" fill="#dff8ff" font-size="11">1,246.2</text><text transform="translate(115.3,292) rotate(-32)" text-anchor="end" fill="#a9c3d3" font-size="11">gc-support</text><rect x="193.576" y="158.09627509738445" width="80.648" height="97.90372490261555" rx="7" fill="var(--teal)"><title>landtech-consultants: 512.6 Average seconds</title></rect><text x="233.89999999999998" y="152.09627509738445" text-anchor="middle" fill="#dff8ff" font-size="11">512.6</text><text transform="translate(233.89999999999998,292) rotate(-32)" text-anchor="end" fill="#a9c3d3" font-size="11">landtech-consult</text><rect x="312.176" y="197.40124640864116" width="80.648" height="58.598753591358836" rx="7" fill="var(--teal)"><title>esri-canada: 306.8 Average seconds</title></rect><text x="352.5" y="191.40124640864116" text-anchor="middle" fill="#dff8ff" font-size="11">306.8</text><text transform="translate(352.5,292) rotate(-32)" text-anchor="end" fill="#a9c3d3" font-size="11">esri-canada</text><rect x="430.776" y="205.1090958622491" width="80.648" height="50.89090413775091" rx="7" fill="var(--teal)"><title>geoconvergence: 266.5 Average seconds</title></rect><text x="471.1" y="199.1090958622491" text-anchor="middle" fill="#dff8ff" font-size="11">266.5</text><text transform="translate(471.1,292) rotate(-32)" text-anchor="end" fill="#a9c3d3" font-size="11">geoconvergence</text><rect x="549.376" y="215.00096331267218" width="80.648" height="40.99903668732781" rx="7" fill="var(--teal)"><title>the-geospatial-group: 214.7 Average seconds</title></rect><text x="589.6999999999999" y="209.00096331267218" text-anchor="middle" fill="#dff8ff" font-size="11">214.7</text><text transform="translate(589.6999999999999,292) rotate(-32)" text-anchor="end" fill="#a9c3d3" font-size="11">the-geospatial-g</text><g class="axis"><text x="56" y="14">Average seconds</text></g></svg></div></div></section><section class="card" style="margin-top:16px"><h2>Tenant Performance Summary</h2><div id="summaryTable"><table class="table"><thead><tr><th>Tenant</th><th>Conversions</th><th>PDF Conversions</th><th>CAD Conversions</th><th>Objects Converted</th><th>Data Processed (MB)</th><th>Avg Time (Sec.)</th></tr></thead><tbody><tr><td>gc-support</td><td>36</td><td>8</td><td>28</td><td>99,314</td><td>22.26</td><td>1,246.2</td></tr><tr><td>landtech-consultants</td><td>20</td><td>8</td><td>12</td><td>235,312</td><td>58.60</td><td>512.6</td></tr><tr><td>esri-canada</td><td>20</td><td>2</td><td>18</td><td>135,994</td><td>11.78</td><td>306.8</td></tr><tr><td>the-geospatial-group</td><td>6</td><td>4</td><td>2</td><td>24,738</td><td>2.44</td><td>214.7</td></tr><tr><td>geoconvergence</td><td>2</td><td>0</td><td>2</td><td>98</td><td>1.12</td><td>266.5</td></tr></tbody></table></div></section><footer class="footer">Use <strong>Download Hosted Snapshot HTML</strong> after loading weekly CSVs to create the publish-ready file with the current data embedded. This self-contained HTML file is designed for Docebo embedding and does not require external JavaScript libraries.</footer></div>
 <script>
-  (function() {
-    window.DS.connection = {
-      warningShown: false,
-      assets: {},
-      loadingAssetGroup: false,
-      retryDelay: 500
-    };
-
-    var connectionSettings = window.globals.connectionSettings || {};
-
-    var useConnectionMessages = window.AbortController != null &&
-      window.location.protocol != 'file:' &&
-      connectionSettings.mode === 'normal';
-
-    window.DS.connection.useConnectionMessages = useConnectionMessages;
-
-    var assetCount = 0;
-    var checkLoadedId;
-
-
-    if (useConnectionMessages && connectionSettings != null) {
-      var contentEl = document.querySelector('.warn-connection-content');
-      var messageEl = contentEl.querySelector('p');
-
-      if (connectionSettings.useDarkTheme) {
-        contentEl.style.borderColor = '#BABBBA';
-        contentEl.style.backgroundColor = '#282828';
-        contentEl.style.color = '#FFFFFF';
-      }
-
-      if (connectionSettings.message != null) {
-        messageEl.textContent = window.decodeURIComponent(connectionSettings.message);
-      }
-    }
-
-    function checkAssetsReady() {
-      for (var i in DS.connection.assets) {
-        if (!DS.connection.assets[i].success) {
-          return false;
-        }
-      }
-      return true;
-    }
-
-    function stopAssetGroup() {
-      if (!useConnectionMessages) { return; }
-
-      assetCount = 0;
-
-      DS.connection.oldAssetGroup = DS.connection.assets;
-      DS.connection.assets = {};
-      DS.connection.loadingAssetGroup = false;
-      clearInterval(checkLoadedId);
-    }
-
-    function startAssetGroup() {
-      if (!useConnectionMessages) { return; }
-      var ticks = 0;
-      clearInterval(checkLoadedId);
-      checkLoadedId = setInterval(function() {
-        var loaded = 0;
-        if (assetCount === 0 && loaded === 0) {
-          clearInterval(checkLoadedId);
-          return;
-        }
-
-        for (var i in DS.connection.assets) {
-          if (DS.connection.assets[i].success) {
-            loaded++;
-          }
-        }
-
-        if (assetCount === loaded && checkAssetsReady()) {
-          for (var i in DS.connection.assets) {
-            if (DS.connection.assets[i].action) {
-              DS.connection.assets[i].action();
-            }
-          }
-          hideWarning();
-          stopAssetGroup();
-        }
-      }, 100)
-    }
-
-    function requiredAsset(url, action, retry, type) {
-      if (!useConnectionMessages) { return; }
-      if (DS.connection.assets[url]) { return; }
-
-      DS.connection.assets[url] = {
-        success: false, action: action, retry: retry, type: type
-      };
-      assetCount = Object.keys(DS.connection.assets).length;
-      if (!DS.connection.loadingAssetGroup) {
-        startAssetGroup();
-      }
-      DS.connection.loadingAssetGroup = true;
-    }
-
-    function assetLoaded(url) {
-      if (!useConnectionMessages) { return; }
-      if (DS.connection.assets[url]) {
-        DS.connection.assets[url].success = true;
-      }
-    }
-
-    function assetFailed(url) {
-      if (!useConnectionMessages) { return; }
-      if (!DS.connection.assets[url]) {
-        if (/\.js$/.test(url) && url.indexOf('transcripts') === -1) {
-          setTimeout(function() {
-            if (DS.connection.lastSlideLoaded != null) {
-              DS.connection.lastSlideLoaded();
-            }
-          }, DS.connection.retryDelay);
-        }
-        return;
-      }
-      if (!DS.connection.warningShown) { showWarning(); }
-      if (DS.connection.assets[url].retry) {
-        setTimeout(function() {
-          if (!DS.connection.assets[url].success) {
-            DS.connection.assets[url].retry()
-          }
-        }, DS.connection.retryDelay);
-      }
-    }
-
-    function hideWarning() {
-      document.body.classList.remove('is-offline');
-      DS.connection.warningShown = false;
-      enableKeys();
-    }
-    DS.connection.hideWarning = hideWarning
-
-    function showWarning(btn) {
-      document.body.classList.add('is-offline')
-      DS.connection.warningShown = true;
-      updateWarningPosition();
-      disableKeys();
-    }
-
-    function updateWarningPosition() {
-      if (!DS.connection.warningShown) {
-        return;
-      }
-
-      var isPortrait = document.body.classList.contains('is-portrait');
-      var isMobile = document.body.classList.contains('view-mobile');
-      var warningEl = document.querySelector('.warn-connection-content');
-
-      if (isPortrait && isMobile) {
-        var slide = document.querySelector('.primary-slide');
-        var slideRect = slide != null
-          ? slide.getBoundingClientRect()
-          : { top: window.innerHeight, left: 0, width: window.innerWidth };
-
-        warningEl.style.top = `${slideRect.top}px`
-        warningEl.style.left = `${slideRect.left + slideRect.width / 2}px`
-      } else {
-        warningEl.style.top = null;
-        warningEl.style.left = null;
-      }
-
-      window.requestAnimationFrame(updateWarningPosition);
-    }
-
-    function onDisableKeyDown(e) {
-      e.preventDefault();
-      e.stopImmediatePropagation();
-    }
-
-    function onDisableKeyUp(e) {
-      e.preventDefault();
-      e.stopImmediatePropagation();
-    }
-
-    var accStyle = document.createElement('style');
-    var warnDialogEl = document.querySelector('.warn-connection-dialog');
-
-    function disableKeys() {
-      if (DS.views && DS.views.nsStack && DS.views.nsStack.length === 1) {
-        DS.views.nsStack[0].tabReachable = false
-        DS.views.nsStack[0].updateTabIndex(true);
-      }
-
-      accStyle.innerHTML = '.acc-shadow-dom { display: none; }';
-      document.body.appendChild(accStyle);
-
-      warnDialogEl.parentNode.append(warnDialogEl);
-      warnDialogEl.focus();
-    }
-
-    function enableKeys() {
-      accStyle.remove();
-      if (DS.views && DS.views.nsStack && DS.views.nsStack.length === 1 && DS.views.nsStack[0].name === '_frame') {
-        DS.views.nsStack[0].tabReachable = true;
-        DS.views.nsStack[0].updateTabIndex();
-      }
-    }
-
-    // these will all be noops if the feature flag isn't set in
-    // the data and `window.globals.features`
-    DS.connection.requiredAsset = requiredAsset;
-    DS.connection.assetLoaded = assetLoaded;
-    DS.connection.assetFailed = assetFailed;
-    DS.connection.stopAssetGroup = stopAssetGroup;
-    DS.connection.startAssetGroup = startAssetGroup;
-  })();
-</script>
-
-
-  <script>
-    
-    if (window.autoSpider && window.vInterfaceObject) {
-      document.querySelector('.mobile-load-title-overlay').style.display = 'none';
-    }
-  </script>
-
-  
-
-  <link rel="stylesheet" href="html5/data/css/output.min.css" data-noprefix/>
-</body>
-<script src="html5/lib/scripts/bootstrapper.min.js"></script>
-</html>
+const EMBEDDED_ROWS = [{"tenant_name":"gc-support","airflow_version":"3.1.7","conversion_dag_version":"1.0","avg_upload_file_size_bytes":779474,"max_upload_file_size_bytes":4426167,"total_conversion_count":9,"pdf_conversions":3,"dwg_conversions":3,"dxf_conversions":3,"total_objects_imported_count":41061,"total_objects_converted_count":28885,"total_file_size_mb":7.02,"avg_conversion_time_seconds":2044.764,"week":"2026-04-20","source_file":"weeklyConvServiceUsageReport_04-20-2026.csv"},{"tenant_name":"landtech-consultants","airflow_version":"3.1.7","conversion_dag_version":"1.0","avg_upload_file_size_bytes":10570398,"max_upload_file_size_bytes":20670725,"total_conversion_count":2,"pdf_conversions":1,"dwg_conversions":1,"dxf_conversions":0,"total_objects_imported_count":0,"total_objects_converted_count":0,"total_file_size_mb":21.14,"avg_conversion_time_seconds":205.949,"week":"2026-04-20","source_file":"weeklyConvServiceUsageReport_04-20-2026.csv"},{"tenant_name":"turtles-test","airflow_version":"3.1.7","conversion_dag_version":"1.0","avg_upload_file_size_bytes":403544,"max_upload_file_size_bytes":988935,"total_conversion_count":26,"pdf_conversions":0,"dwg_conversions":3,"dxf_conversions":23,"total_objects_imported_count":186121,"total_objects_converted_count":75512,"total_file_size_mb":10.49,"avg_conversion_time_seconds":1035.632,"week":"2026-04-27","source_file":"weeklyConvServiceUsageReport_04-27-2026.csv"},{"tenant_name":"turtles-dev","airflow_version":"3.1.7","conversion_dag_version":"1.0","avg_upload_file_size_bytes":146870,"max_upload_file_size_bytes":470070,"total_conversion_count":8,"pdf_conversions":2,"dwg_conversions":1,"dxf_conversions":5,"total_objects_imported_count":14275,"total_objects_converted_count":8282,"total_file_size_mb":1.17,"avg_conversion_time_seconds":554.01,"week":"2026-04-27","source_file":"weeklyConvServiceUsageReport_04-27-2026.csv"},{"tenant_name":"gc-support","airflow_version":"3.1.7","conversion_dag_version":"1.0","avg_upload_file_size_bytes":456302,"max_upload_file_size_bytes":1334874,"total_conversion_count":9,"pdf_conversions":1,"dwg_conversions":0,"dxf_conversions":8,"total_objects_imported_count":15186,"total_objects_converted_count":20772,"total_file_size_mb":4.11,"avg_conversion_time_seconds":447.677,"week":"2026-05-04","source_file":"weeklyConvServiceUsageReport_05-04-2026.csv"},{"tenant_name":"geoconvergence","airflow_version":"3.1.7","conversion_dag_version":"1.0","avg_upload_file_size_bytes":559326,"max_upload_file_size_bytes":559326,"total_conversion_count":1,"pdf_conversions":0,"dwg_conversions":1,"dxf_conversions":0,"total_objects_imported_count":999,"total_objects_converted_count":49,"total_file_size_mb":0.56,"avg_conversion_time_seconds":266.476,"week":"2026-05-04","source_file":"weeklyConvServiceUsageReport_05-04-2026.csv"},{"tenant_name":"landtech-consultants","airflow_version":"3.1.7","conversion_dag_version":"1.0","avg_upload_file_size_bytes":1020594,"max_upload_file_size_bytes":1952410,"total_conversion_count":8,"pdf_conversions":3,"dwg_conversions":5,"dxf_conversions":0,"total_objects_imported_count":166765,"total_objects_converted_count":117656,"total_file_size_mb":8.16,"avg_conversion_time_seconds":819.342,"week":"2026-05-04","source_file":"weeklyConvServiceUsageReport_05-04-2026.csv"},{"tenant_name":"the-geospatial-group","airflow_version":"3.1.7","conversion_dag_version":"1.0","avg_upload_file_size_bytes":406166,"max_upload_file_size_bytes":996059,"total_conversion_count":3,"pdf_conversions":2,"dwg_conversions":1,"dxf_conversions":0,"total_objects_imported_count":10564,"total_objects_converted_count":12369,"total_file_size_mb":1.22,"avg_conversion_time_seconds":214.68,"week":"2026-05-04","source_file":"weeklyConvServiceUsageReport_05-04-2026.csv"},{"tenant_name":"esri-canada","airflow_version":"3.1.7","conversion_dag_version":"1.0","avg_upload_file_size_bytes":589126,"max_upload_file_size_bytes":1009623,"total_conversion_count":10,"pdf_conversions":1,"dwg_conversions":9,"dxf_conversions":0,"total_objects_imported_count":19143,"total_objects_converted_count":67997,"total_file_size_mb":5.89,"avg_conversion_time_seconds":306.836,"week":"2026-05-11","source_file":"weeklyConvServiceUsageReport_05-11-2026.csv"},{"tenant_name":"esri-canada","airflow_version":"3.1.7","conversion_dag_version":"1.0","avg_upload_file_size_bytes":589126,"max_upload_file_size_bytes":1009623,"total_conversion_count":10,"pdf_conversions":1,"dwg_conversions":9,"dxf_conversions":0,"total_objects_imported_count":19143,"total_objects_converted_count":67997,"total_file_size_mb":5.89,"avg_conversion_time_seconds":306.836,"source_file":"weeklyConvServiceUsageReport_05-11-2026.csv","week":"2026-05-11"},{"tenant_name":"gc-support","airflow_version":"3.1.7","conversion_dag_version":"1.0","avg_upload_file_size_bytes":456302,"max_upload_file_size_bytes":1334874,"total_conversion_count":9,"pdf_conversions":1,"dwg_conversions":0,"dxf_conversions":8,"total_objects_imported_count":15186,"total_objects_converted_count":20772,"total_file_size_mb":4.11,"avg_conversion_time_seconds":447.677,"source_file":"weeklyConvServiceUsageReport_05-04-2026.csv","week":"2026-05-04"},{"tenant_name":"geoconvergence","airflow_version":"3.1.7","conversion_dag_version":"1.0","avg_upload_file_size_bytes":559326,"max_upload_file_size_bytes":559326,"total_conversion_count":1,"pdf_conversions":0,"dwg_conversions":1,"dxf_conversions":0,"total_objects_imported_count":999,"total_objects_converted_count":49,"total_file_size_mb":0.56,"avg_conversion_time_seconds":266.476,"source_file":"weeklyConvServiceUsageReport_05-04-2026.csv","week":"2026-05-04"},{"tenant_name":"landtech-consultants","airflow_version":"3.1.7","conversion_dag_version":"1.0","avg_upload_file_size_bytes":1020594,"max_upload_file_size_bytes":1952410,"total_conversion_count":8,"pdf_conversions":3,"dwg_conversions":5,"dxf_conversions":0,"total_objects_imported_count":166765,"total_objects_converted_count":117656,"total_file_size_mb":8.16,"avg_conversion_time_seconds":819.342,"source_file":"weeklyConvServiceUsageReport_05-04-2026.csv","week":"2026-05-04"},{"tenant_name":"the-geospatial-group","airflow_version":"3.1.7","conversion_dag_version":"1.0","avg_upload_file_size_bytes":406166,"max_upload_file_size_bytes":996059,"total_conversion_count":3,"pdf_conversions":2,"dwg_conversions":1,"dxf_conversions":0,"total_objects_imported_count":10564,"total_objects_converted_count":12369,"total_file_size_mb":1.22,"avg_conversion_time_seconds":214.68,"source_file":"weeklyConvServiceUsageReport_05-04-2026.csv","week":"2026-05-04"},{"tenant_name":"gc-support","airflow_version":"3.1.7","conversion_dag_version":"1.0","avg_upload_file_size_bytes":779474,"max_upload_file_size_bytes":4426167,"total_conversion_count":9,"pdf_conversions":3,"dwg_conversions":3,"dxf_conversions":3,"total_objects_imported_count":41061,"total_objects_converted_count":28885,"total_file_size_mb":7.02,"avg_conversion_time_seconds":2044.764,"source_file":"weeklyConvServiceUsageReport_04-20-2026.csv","week":"2026-04-20"},{"tenant_name":"landtech-consultants","airflow_version":"3.1.7","conversion_dag_version":"1.0","avg_upload_file_size_bytes":10570398,"max_upload_file_size_bytes":20670725,"total_conversion_count":2,"pdf_conversions":1,"dwg_conversions":1,"dxf_conversions":0,"total_objects_imported_count":0,"total_objects_converted_count":0,"total_file_size_mb":21.14,"avg_conversion_time_seconds":205.949,"source_file":"weeklyConvServiceUsageReport_04-20-2026.csv","week":"2026-04-20"},{"tenant_name":"turtles-test","airflow_version":"3.1.7","conversion_dag_version":"1.0","avg_upload_file_size_bytes":403544,"max_upload_file_size_bytes":988935,"total_conversion_count":26,"pdf_conversions":0,"dwg_conversions":3,"dxf_conversions":23,"total_objects_imported_count":186121,"total_objects_converted_count":75512,"total_file_size_mb":10.49,"avg_conversion_time_seconds":1035.632,"source_file":"weeklyConvServiceUsageReport_04-27-2026.csv","week":"2026-04-27"},{"tenant_name":"turtles-dev","airflow_version":"3.1.7","conversion_dag_version":"1.0","avg_upload_file_size_bytes":146870,"max_upload_file_size_bytes":470070,"total_conversion_count":8,"pdf_conversions":2,"dwg_conversions":1,"dxf_conversions":5,"total_objects_imported_count":14275,"total_objects_converted_count":8282,"total_file_size_mb":1.17,"avg_conversion_time_seconds":554.01,"source_file":"weeklyConvServiceUsageReport_04-27-2026.csv","week":"2026-04-27"}];
+const numericFields=['avg_upload_file_size_bytes','max_upload_file_size_bytes','total_conversion_count','pdf_conversions','dwg_conversions','dxf_conversions','total_objects_imported_count','total_objects_converted_count','total_file_size_mb','avg_conversion_time_seconds','user_count','users','active_users'];
+const chartDefs=[['weeklyTrend','Weekly Conversion Volume'],['mix','Conversion Mix by File Type'],['topTenants','Highest-Volume Tenants'],['objects','Object Processing Volume'],['performance','Average Processing Time by Tenant'],['fileSize','Weekly Data Processed'],['versions','Platform Version Summary']];
+const STORAGE_KEY='geocomm_conversion_dashboard_rows_v2';
+const SETTINGS_KEY='geocomm_conversion_dashboard_settings_v1';
+const DATA_VERSION='2026-05-13T00:00:00Z';
+const INITIAL_SETTINGS={"weekRange":"all","selectedTenants":["esri-canada","gc-support","geoconvergence","landtech-consultants","the-geospatial-group"],"visibleCharts":["weeklyTrend","mix","topTenants","objects","performance"],"settingsOpen":true};
+const $=id=>document.getElementById(id); let selectedTenants=new Set(), visibleCharts=new Set(chartDefs.map(d=>d[0]));
+function storedRows(){try{const saved=localStorage.getItem(STORAGE_KEY);if(!saved)return null;const parsed=JSON.parse(saved);return parsed&&parsed.version===DATA_VERSION?parsed.rows:null;}catch(e){return null;}}
+function persistRows(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify({version:DATA_VERSION,rows}));}catch(e){console.warn(e);}}
+function currentSettings(){return{weekRange:$('weekRange')?$('weekRange').value:'all',selectedTenants:[...selectedTenants],visibleCharts:[...visibleCharts],settingsOpen:!!document.querySelector('.settings')?.open};}
+function storedSettings(){try{const saved=localStorage.getItem(SETTINGS_KEY);return saved?JSON.parse(saved):INITIAL_SETTINGS;}catch(e){return INITIAL_SETTINGS;}}
+function applySettings(st){if(!st)return;if(Array.isArray(st.selectedTenants))selectedTenants=new Set(st.selectedTenants);if(Array.isArray(st.visibleCharts))visibleCharts=new Set(st.visibleCharts);if($('weekRange')&&st.weekRange)$('weekRange').value=st.weekRange;if(document.querySelector('.settings')&&st.settingsOpen)document.querySelector('.settings').open=true;}
+function saveSettings(show=true){try{localStorage.setItem(SETTINGS_KEY,JSON.stringify(currentSettings()));if(show)alert('Dashboard view settings saved.');}catch(e){console.warn(e);if(show)alert('Settings could not be saved in this browser.');}}
+function resetSettings(){try{localStorage.removeItem(SETTINGS_KEY);}catch(e){}selectedTenants=new Set(unique(rows.map(r=>r.tenant_name)));visibleCharts=new Set(chartDefs.map(d=>d[0]));if($('weekRange'))$('weekRange').value='all';initSelectors();render();}
+let rows=normalizeRows(storedRows()||EMBEDDED_ROWS);
+function normalizeRows(input){return (input||[]).map(r=>{const o={...r};numericFields.forEach(k=>{if(o[k]!==undefined&&o[k]!==null&&o[k]!=='')o[k]=Number(String(o[k]).replace(/,/g,''))||0;});o.tenant_name=o.tenant_name||o.tenant||'Unknown tenant';o.week=o.week||weekFromFile(o.source_file||'')||'Unknown';return o;});}
+function weekFromFile(name){const m=String(name).match(/(\d{2})-(\d{2})-(\d{4})/);return m?`${m[3]}-${m[1]}-${m[2]}`:'';}
+function parseCSV(text){const out=[];let row=[],cell='',q=false;for(let i=0;i<text.length;i++){const c=text[i],n=text[i+1];if(c==='"'&&q&&n==='"'){cell+='"';i++;}else if(c==='"'){q=!q;}else if(c===','&&!q){row.push(cell);cell='';}else if((c==='\n'||c==='\r')&&!q){if(cell!==''||row.length){row.push(cell);out.push(row);row=[];cell='';}if(c==='\r'&&n==='\n')i++;}else cell+=c;}if(cell!==''||row.length){row.push(cell);out.push(row);}const headers=(out.shift()||[]).map(h=>h.trim().replace(/^"|"$/g,''));return out.filter(r=>r.length&&r.some(x=>String(x).trim()!=='')).map(r=>Object.fromEntries(headers.map((h,i)=>[h,(r[i]||'').trim()])));}
+function fmt(n,dec=0){if(n===null||n===undefined||isNaN(n))return '—';return Number(n).toLocaleString(undefined,{maximumFractionDigits:dec,minimumFractionDigits:dec});}function unique(a){return[...new Set(a)].sort();}function sum(a,k){return a.reduce((x,r)=>x+(Number(r[k])||0),0);}function avg(a,k){const v=a.map(r=>Number(r[k])).filter(x=>!isNaN(x));return v.length?v.reduce((x,y)=>x+y,0)/v.length:0;}function groupBy(a,k){return a.reduce((m,r)=>((m[r[k]]=(m[r[k]]||[]).concat(r)),m),{});}function hasUserField(){return['user_count','users','active_users'].find(k=>rows.some(r=>r[k]!==undefined&&!isNaN(r[k])));}
+function filteredRows(){let f=[...rows];const weeks=unique(f.map(r=>r.week));if($('weekRange').value==='latest'){const latest=weeks[weeks.length-1];f=f.filter(r=>r.week===latest);}if($('weekRange').value==='last4'){const keep=new Set(weeks.slice(-4));f=f.filter(r=>keep.has(r.week));}if(selectedTenants.size)f=f.filter(r=>selectedTenants.has(r.tenant_name));return f;}
+function initSelectors(){const tenants=unique(rows.map(r=>r.tenant_name));if(!selectedTenants.size)tenants.forEach(t=>selectedTenants.add(t));renderTenantBox();$('chartBox').innerHTML=chartDefs.map(d=>`<label class="check"><input type="checkbox" data-chart="${d[0]}" ${visibleCharts.has(d[0])?'checked':''}> ${d[1]}</label>`).join('');$('chartBox').querySelectorAll('input').forEach(cb=>cb.onchange=e=>{e.target.checked?visibleCharts.add(e.target.dataset.chart):visibleCharts.delete(e.target.dataset.chart);saveSettings(false);render();});}
+function renderTenantBox(){const q=$('tenantSearch').value.toLowerCase();const tenants=unique(rows.map(r=>r.tenant_name)).filter(t=>t.toLowerCase().includes(q));$('tenantBox').innerHTML=tenants.map(t=>`<label class="check"><input type="checkbox" data-tenant="${t.replace(/"/g,'&quot;')}" ${selectedTenants.has(t)?'checked':''}> ${t}</label>`).join('')||'<div class="note">No tenants match your search.</div>';$('tenantBox').querySelectorAll('input').forEach(cb=>cb.onchange=e=>{e.target.checked?selectedTenants.add(e.target.dataset.tenant):selectedTenants.delete(e.target.dataset.tenant);saveSettings(false);render();});}
+function render(){const f=filteredRows(),uf=hasUserField(),tenants=unique(f.map(r=>r.tenant_name)),weeks=unique(f.map(r=>r.week)),userValue=uf?sum(f,uf):tenants.length,userLabel=uf?uf.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase()):'Selected Tenants',conv=sum(f,'total_conversion_count'),pdf=sum(f,'pdf_conversions'),dwg=sum(f,'dwg_conversions'),dxf=sum(f,'dxf_conversions'),cad=dwg+dxf,obj=sum(f,'total_objects_converted_count'),imported=sum(f,'total_objects_imported_count'),avgSec=avg(f,'avg_conversion_time_seconds'),totalMb=sum(f,'total_file_size_mb');$('dataStatus').textContent=`${fmt(rows.length)} rows • ${unique(rows.map(r=>r.tenant_name)).length} tenants • ${unique(rows.map(r=>r.week)).length} weeks`;const cards=[{label:userLabel,value:userValue,dec:0,sub:uf?'User count detected in uploaded CSV data':'Active tenant scope for selected period',highlight:true},{label:'Total Conversions',value:conv,dec:0,sub:`${fmt(pdf)} PDF • ${fmt(dwg)} DWG • ${fmt(dxf)} DXF`},{label:'CAD Conversions',value:cad,dec:0,sub:`${fmt(dwg)} DWG + ${fmt(dxf)} DXF`},{label:'Objects Converted',value:obj,dec:0,sub:`${fmt(imported)} objects imported`},{label:'Data Processed',value:totalMb,dec:2,sub:'Megabytes processed across selected data'},{label:'Average Processing Time',value:avgSec,dec:1,sub:'Seconds per conversion row'}];$('kpis').innerHTML=cards.map(k=>`<div class="card kpi ${k.highlight?'user':''}"><div class="label">${k.label}</div><div class="value">${fmt(k.value,k.dec)}</div><div class="sub">${k.sub}</div></div>`).join('');const host=$('charts');host.innerHTML='';chartDefs.forEach(d=>{if(!visibleCharts.has(d[0]))return;const div=document.createElement('div');div.className='card chart-card';div.innerHTML=`<div class="chart-title">${d[1]}</div><div class="chart-sub">${tenants.length} tenants • ${weeks.length} weeks selected</div><div class="chart" id="${d[0]}"></div>`;host.appendChild(div);});if(!f.length){host.innerHTML='<div class="card empty">No rows match the selected filters.</div>';$('summaryTable').innerHTML='';return;}if(visibleCharts.has('weeklyTrend'))lineChart('weeklyTrend',weekly(f,'total_conversion_count'),'Conversions');if(visibleCharts.has('mix'))stackedMix('mix',f);if(visibleCharts.has('topTenants'))barChart('topTenants',topBy(f,'tenant_name','total_conversion_count',10),'Conversions');if(visibleCharts.has('objects'))groupedBars('objects',weeklyPair(f,'total_objects_imported_count','total_objects_converted_count'),'Imported','Converted');if(visibleCharts.has('performance'))barChart('performance',topBy(f,'tenant_name','avg_conversion_time_seconds',10,true),'Average seconds',true);if(visibleCharts.has('fileSize'))lineChart('fileSize',weekly(f,'total_file_size_mb'),'Megabytes');if(visibleCharts.has('versions'))versionSummary('versions',f);summaryTable(f);}
+function weekly(f,k){return Object.entries(groupBy(f,'week')).map(([name,rs])=>({name,value:sum(rs,k)})).sort((a,b)=>a.name.localeCompare(b.name));}function weeklyPair(f,k1,k2){return Object.entries(groupBy(f,'week')).map(([name,rs])=>({name,a:sum(rs,k1),b:sum(rs,k2)})).sort((a,b)=>a.name.localeCompare(b.name));}function topBy(f,g,k,n,average=false){return Object.entries(groupBy(f,g)).map(([name,rs])=>({name,value:average?avg(rs,k):sum(rs,k)})).sort((a,b)=>b.value-a.value).slice(0,n);}
+function svgBase(el){const box=$(el),w=box.clientWidth||600,h=box.clientHeight||310,m={l:56,r:18,t:18,b:54};return{box,w,h,m,iw:w-m.l-m.r,ih:h-m.t-m.b};}
+function lineChart(el,data,label){const{box,w,h,m,iw,ih}=svgBase(el),max=Math.max(...data.map(d=>d.value),1),pts=data.map((d,i)=>[m.l+(data.length===1?iw/2:i*iw/(data.length-1)),m.t+ih-(d.value/max)*ih]);box.innerHTML=`<svg viewBox="0 0 ${w} ${h}">${[0,.25,.5,.75,1].map(p=>`<line class="gridline" x1="${m.l}" x2="${m.l+iw}" y1="${m.t+ih-p*ih}" y2="${m.t+ih-p*ih}"/>`).join('')}<polyline fill="none" stroke="var(--blue)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" points="${pts.map(p=>p.join(',')).join(' ')}"/>${pts.map((p,i)=>`<circle cx="${p[0]}" cy="${p[1]}" r="5" fill="var(--lime)"><title>${data[i].name}: ${fmt(data[i].value,1)} ${label}</title></circle>`).join('')}<g class="axis">${data.map((d,i)=>`<text transform="translate(${pts[i][0]},${h-18}) rotate(-28)" text-anchor="end">${d.name.slice(5)}</text>`).join('')}<text x="${m.l}" y="14">${label}</text></g></svg>`;}
+function barChart(el,data,label,dec=false){const{box,w,h,m,iw,ih}=svgBase(el),max=Math.max(...data.map(d=>d.value),1),bw=iw/Math.max(data.length,1)*.68;box.innerHTML=`<svg viewBox="0 0 ${w} ${h}">${[0,.25,.5,.75,1].map(p=>`<line class="gridline" x1="${m.l}" x2="${m.l+iw}" y1="${m.t+ih-p*ih}" y2="${m.t+ih-p*ih}"/>`).join('')}${data.map((d,i)=>{const x=m.l+i*iw/data.length+(iw/data.length-bw)/2,bh=(d.value/max)*ih,y=m.t+ih-bh;return`<rect x="${x}" y="${y}" width="${bw}" height="${bh}" rx="7" fill="var(--teal)"><title>${d.name}: ${fmt(d.value,dec?1:0)} ${label}</title></rect><text x="${x+bw/2}" y="${y-6}" text-anchor="middle" fill="#dff8ff" font-size="11">${fmt(d.value,dec?1:0)}</text><text transform="translate(${x+bw/2},${h-18}) rotate(-32)" text-anchor="end" fill="#a9c3d3" font-size="11">${d.name.slice(0,16)}</text>`}).join('')}<g class="axis"><text x="${m.l}" y="14">${label}</text></g></svg>`;}
+function stackedMix(el,f){const mix=[['PDF','pdf_conversions','var(--blue)'],['DWG','dwg_conversions','var(--lime)'],['DXF','dxf_conversions','var(--orange)']],data=weekly(f,'total_conversion_count').map(w=>{const rs=f.filter(r=>r.week===w.name);return{name:w.name,vals:mix.map(m=>sum(rs,m[1]))};}),{box,w,h,m,iw,ih}=svgBase(el),totals=data.map(d=>d.vals.reduce((a,b)=>a+b,0)),max=Math.max(...totals,1),bw=iw/Math.max(data.length,1)*.55;box.innerHTML=`<div class="legend">${mix.map(m=>`<span><i class="sw" style="background:${m[2]}"></i>${m[0]}</span>`).join('')}</div><svg viewBox="0 0 ${w} ${h-25}">${data.map((d,i)=>{let y=m.t+ih,x=m.l+i*iw/data.length+(iw/data.length-bw)/2;return d.vals.map((v,j)=>{let bh=v/max*ih;y-=bh;return`<rect x="${x}" y="${y}" width="${bw}" height="${bh}" rx="4" fill="${mix[j][2]}"><title>${d.name} ${mix[j][0]}: ${fmt(v)}</title></rect>`}).join('')+`<text transform="translate(${x+bw/2},${h-43}) rotate(-28)" text-anchor="end" fill="#a9c3d3" font-size="11">${d.name.slice(5)}</text>`}).join('')}</svg>`;}
+function groupedBars(el,data,aLabel,bLabel){const{box,w,h,m,iw,ih}=svgBase(el),max=Math.max(...data.flatMap(d=>[d.a,d.b]),1),bw=iw/Math.max(data.length,1)*.26;box.innerHTML=`<div class="legend"><span><i class="sw" style="background:var(--gold)"></i>${aLabel}</span><span><i class="sw" style="background:var(--blue)"></i>${bLabel}</span></div><svg viewBox="0 0 ${w} ${h-25}">${data.map((d,i)=>{const gx=m.l+i*iw/data.length+iw/data.length*.25,ha=d.a/max*ih,hb=d.b/max*ih;return`<rect x="${gx}" y="${m.t+ih-ha}" width="${bw}" height="${ha}" rx="5" fill="var(--gold)"></rect><rect x="${gx+bw+4}" y="${m.t+ih-hb}" width="${bw}" height="${hb}" rx="5" fill="var(--blue)"></rect><text transform="translate(${gx+bw},${h-43}) rotate(-28)" text-anchor="end" fill="#a9c3d3" font-size="11">${d.name.slice(5)}</text>`}).join('')}</svg>`;}
+function versionSummary(el,f){const versions=Object.entries(groupBy(f,'airflow_version')).map(([name,rs])=>({name,rows:rs.length,tenants:unique(rs.map(r=>r.tenant_name)).length,conversions:sum(rs,'total_conversion_count')}));$(el).innerHTML=`<table class="table"><thead><tr><th>Airflow Version</th><th>Data Rows</th><th>Tenants</th><th>Conversions</th></tr></thead><tbody>${versions.map(v=>`<tr><td>${v.name}</td><td>${fmt(v.rows)}</td><td>${fmt(v.tenants)}</td><td>${fmt(v.conversions)}</td></tr>`).join('')}</tbody></table>`;}
+function summaryTable(f){const data=topBy(f,'tenant_name','total_conversion_count',100).map(d=>{const rs=f.filter(r=>r.tenant_name===d.name);return{tenant:d.name,conversions:sum(rs,'total_conversion_count'),pdf:sum(rs,'pdf_conversions'),cad:sum(rs,'dwg_conversions')+sum(rs,'dxf_conversions'),objects:sum(rs,'total_objects_converted_count'),avg:avg(rs,'avg_conversion_time_seconds'),mb:sum(rs,'total_file_size_mb')};});$('summaryTable').innerHTML=`<table class="table"><thead><tr><th>Tenant</th><th>Conversions</th><th>PDF Conversions</th><th>CAD Conversions</th><th>Objects Converted</th><th>Data Processed (MB)</th><th>Avg Time (Sec.)</th></tr></thead><tbody>${data.map(r=>`<tr><td>${r.tenant}</td><td>${fmt(r.conversions)}</td><td>${fmt(r.pdf)}</td><td>${fmt(r.cad)}</td><td>${fmt(r.objects)}</td><td>${fmt(r.mb,2)}</td><td>${fmt(r.avg,1)}</td></tr>`).join('')}</tbody></table>`;}
+function crc32(str){const table=crc32.table||(crc32.table=Array.from({length:256},(_,n)=>{let c=n;for(let k=0;k<8;k++)c=((c&1)?(0xEDB88320^(c>>>1)):(c>>>1));return c>>>0;}));let crc=-1;for(let i=0;i<str.length;i++)crc=(crc>>>8)^table[(crc^str.charCodeAt(i))&255];return(crc^-1)>>>0;}
+function le(n,b){let s='';for(let i=0;i<b;i++)s+=String.fromCharCode((n>>(8*i))&255);return s;}
+function zipFiles(files){let data='',central='',offset=0;files.forEach(f=>{const content=unescape(encodeURIComponent(f.content));const crc=crc32(content),size=content.length,name=f.name;const local='PK\x03\x04'+le(20,2)+le(0,2)+le(0,2)+le(0,2)+le(0,2)+le(crc,4)+le(size,4)+le(size,4)+le(name.length,2)+le(0,2)+name;data+=local+content;central+='PK\x01\x02'+le(20,2)+le(20,2)+le(0,2)+le(0,2)+le(0,2)+le(0,2)+le(crc,4)+le(size,4)+le(size,4)+le(name.length,2)+le(0,2)+le(0,2)+le(0,2)+le(0,2)+le(0,4)+le(offset,4)+name;offset+=local.length+content.length;});const end='PK\x05\x06'+le(0,2)+le(0,2)+le(files.length,2)+le(files.length,2)+le(central.length,4)+le(data.length,4)+le(0,2);return new Blob([new Uint8Array([...data+central+end].map(c=>c.charCodeAt(0)))],{type:'application/zip'});}
+function publishedHtml(){return '<!doctype html>\n'+document.documentElement.outerHTML.replace(/const EMBEDDED_ROWS = [\s\S]*?;\nconst numericFields/,'const EMBEDDED_ROWS = '+JSON.stringify(rows)+';\nconst numericFields').replace(/const INITIAL_SETTINGS=[\s\S]*?;\nconst \$=id/,'const INITIAL_SETTINGS='+JSON.stringify(currentSettings())+';\nconst $=id');}
+function scormManifest(){return `<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="geocomm-conversion-dashboard" version="1.0" xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata><schema>ADL SCORM</schema><schemaversion>1.2</schemaversion></metadata>
+  <organizations default="ORG1"><organization identifier="ORG1"><title>GeoComm Conversion Service Usage Dashboard</title><item identifier="ITEM1" identifierref="RES1"><title>GeoComm Conversion Service Usage Dashboard</title></item></organization></organizations>
+  <resources><resource identifier="RES1" type="webcontent" adlcp:scormtype="sco" href="index.html"><file href="index.html" /></resource></resources>
+</manifest>`;}
+function downloadBlob(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1500);}
+$('fileInput').addEventListener('change',async e=>{const files=[...e.target.files];for(const file of files){const text=await file.text();const parsed=parseCSV(text).map(r=>({...r,source_file:file.name,week:weekFromFile(file.name)||new Date(file.lastModified).toISOString().slice(0,10)}));rows=rows.concat(normalizeRows(parsed));}persistRows();selectedTenants=new Set(unique(rows.map(r=>r.tenant_name)));saveSettings(false);initSelectors();render();});$('tenantSearch').oninput=renderTenantBox;$('weekRange').onchange=()=>{saveSettings(false);render();};$('allTenants').onclick=()=>{selectedTenants=new Set(unique(rows.map(r=>r.tenant_name)));saveSettings(false);renderTenantBox();render();};$('noTenants').onclick=()=>{selectedTenants.clear();saveSettings(false);renderTenantBox();render();};$('resetBtn').onclick=()=>{rows=normalizeRows(EMBEDDED_ROWS);persistRows();selectedTenants.clear();initSelectors();saveSettings(false);render();};$('clearBtn').onclick=()=>{rows=[];persistRows();selectedTenants.clear();initSelectors();saveSettings(false);render();};$('saveSettingsBtn').onclick=()=>saveSettings(true);$('resetSettingsBtn').onclick=()=>{resetSettings();alert('Dashboard view settings reset.');};$('exportBtn').onclick=()=>{const f=filteredRows(),keys=['week','tenant_name','total_conversion_count','pdf_conversions','dwg_conversions','dxf_conversions','total_objects_imported_count','total_objects_converted_count','total_file_size_mb','avg_conversion_time_seconds','source_file'];const csv=[keys.join(','),...f.map(r=>keys.map(k=>`"${String(r[k]??'').replace(/"/g,'""')}"`).join(','))].join('\n');downloadBlob(new Blob([csv],{type:'text/csv'}),'geocomm_filtered_conversion_summary.csv');};$('snapshotBtn').onclick=()=>downloadBlob(new Blob([publishedHtml()],{type:'text/html'}),'geocomm_conversion_service_dashboard_hosted_snapshot.html');$('scormBtn').onclick=()=>downloadBlob(zipFiles([{name:'imsmanifest.xml',content:scormManifest()},{name:'index.html',content:publishedHtml()}]),'geocomm_conversion_service_dashboard_scorm12.zip');window.addEventListener('resize',()=>render());applySettings(storedSettings());initSelectors();render();
+</script></body></html>
